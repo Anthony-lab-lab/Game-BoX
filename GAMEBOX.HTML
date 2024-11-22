@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gamer Box</title>
+    <style>
+        body {
+            background-color: #add8e6; /* Light blue background */
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            font-size: 60px;
+            color: black;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .header span {
+            color: blue;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            padding: 20px;
+        }
+        .game-window {
+            width: 1280px; /* Full 720p width */
+            text-align: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .game-window iframe {
+            width: 1280px; /* Full 720p width */
+            height: 720px; /* Full 720p height */
+            border-radius: 10px;
+        }
+        .game-title {
+            margin-top: 10px;
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+        }
+        .search-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+        }
+        .search-bar {
+            padding: 10px;
+            font-size: 16px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span>Gamer</span> Box
+    </div>
+    <div class="search-container">
+        <input class="search-bar" type="text" id="gameSearch" placeholder="Search for a game..." onkeyup="searchGame()">
+    </div>
+    <div class="container" id="gameContainer">
+        <!-- Metal Slug 2 -->
+        <div class="game-window" id="metalSlug2">
+            <iframe src="https://www.retrogames.cc/embed/9158-metal-slug-2-super-vehicle-001ii-ngm-2410-ngh-2410.html" 
+                    frameborder="no" 
+                    allowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    mozallowfullscreen="true" 
+                    scrolling="no">
+            </iframe>
+            <div class="game-title">Metal Slug 2 - Super Vehicle-001II</div>
+        </div>
+        <!-- Marvel vs Capcom -->
+        <div class="game-window" id="marvelVsCapcom">
+            <iframe src="https://www.retrogames.cc/embed/9123-marvel-vs-capcom-clash-of-super-heroes-980123-usa.html" 
+                    frameborder="no" 
+                    allowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    mozallowfullscreen="true" 
+                    scrolling="no">
+            </iframe>
+            <div class="game-title">Marvel vs Capcom - Clash of Super Heroes</div>
+        </div>
+        <!-- Dragon Ball Z -->
+        <div class="game-window" id="dragonBallZ">
+            <iframe src="https://www.retrogames.cc/embed/28096-dragon-ball-z-supersonic-warriors-k-projectg.html" 
+                    frameborder="no" 
+                    allowfullscreen="true" 
+                    webkitallowfullscreen="true" 
+                    mozallowfullscreen="true" 
+                    scrolling="no">
+            </iframe>
+            <div class="game-title">Dragon Ball Z - Supersonic Warriors</div>
+        </div>
+
+        <!-- Additional Games -->
+
+        <!-- Cadillacs and Dinosaurs -->
+        <div class="game-window" id="cadillacsDinosaurs">
+            <iframe src="https://www.retrogames.cc/embed/8037-cadillacs-dinosaurs-930201-etc.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Cadillacs and Dinosaurs</div>
+        </div>
+
+        <!-- JoJo's Bizarre Adventure -->
+        <div class="game-window" id="jojosBizarreAdventure">
+            <iframe src="https://www.retrogames.cc/embed/8843-jojos-bizarre-adventure%3A-heritage-for-the-future-jojo-no-kimyou-na-bouken%3A-mirai-e-no-isan-japan-990927-no-cd.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">JoJo's Bizarre Adventure: Heritage for the Future</div>
+        </div>
+
+        <!-- Tekken 3 -->
+        <div class="game-window" id="tekken3">
+            <iframe src="https://www.retrogames.cc/embed/40238-tekken-3.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Tekken 3</div>
+        </div>
+
+        <!-- Street Fighter II -->
+        <div class="game-window" id="streetFighter2">
+            <iframe src="https://www.retrogames.cc/embed/850-street-fighter-ii-the-world-warriors.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Street Fighter II: The World Warriors</div>
+        </div>
+
+        <!-- Super Mario Bros -->
+        <div class="game-window" id="superMarioBros">
+            <iframe src="https://www.retrogames.cc/embed/30144-super-mario-bros.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Super Mario Bros</div>
+        </div>
+
+        <!-- Pac-Man -->
+        <div class="game-window" id="pacMan">
+            <iframe src="https://www.retrogames.cc/embed/42136-pac-man.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Pac-Man</div>
+        </div>
+
+        <!-- Street Fighter Alpha 3 -->
+        <div class="game-window" id="streetFighterAlpha3">
+            <iframe src="https://www.retrogames.cc/embed/8902-street-fighter-alpha-3.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Street Fighter Alpha 3</div>
+        </div>
+
+        <!-- Mortal Kombat II -->
+        <div class="game-window" id="mortalKombat2">
+            <iframe src="https://www.retrogames.cc/embed/8900-mortal-kombat-ii.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Mortal Kombat II</div>
+        </div>
+
+        <!-- Sonic the Hedgehog -->
+        <div class="game-window" id="sonicTheHedgehog">
+            <iframe src="https://www.retrogames.cc/embed/1054-sonic-the-hedgehog.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Sonic the Hedgehog</div>
+        </div>
+
+        <!-- Final Fight -->
+        <div class="game-window" id="finalFight">
+            <iframe src="https://www.retrogames.cc/embed/7071-final-fight.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+            <div class="game-title">Final Fight</div>
+        </div>
+
+        <!-- King of Fighters '98 -->
+        <div class="game-window" id="kingOfFighters98">
+            <iframe src="https://www.retrogames.cc/embed/7074-the-king-of-fighters-98.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen
